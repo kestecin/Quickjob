@@ -1,0 +1,27 @@
+//form to insert users
+<form method="post">
+    Voornaam: <input type="text" name = "fname" /><br/>
+    Achternaam: <input type="text" name = "lname" /><br/>
+    Email: <input type="email" name = "email" /><br/>
+    <input type="submit" name="submitbtn"/>
+</form
+
+//form to remove users
+<form method="post">
+    Met Id: <input type="text" name = "id" /><br/>
+    <input type="submit" name="deleteByIdBtn"/>
+</form>
+<form method="post">
+    Met voornaam: 
+    <input type="text" name = "fname" /><br/>
+    <input type="submit" name="deleteByFnameBtn"/>
+</form>
+<form method="post">
+    Met achternaam: 
+    <input type="text" name = "lname" /><br/>
+    <input type="submit" name="deleteByLnameBtn"/>
+</form>
+<form method="post">
+    Met email: <input type="text" name = "email" /><br/>
+    <input type="submit" name="deleteByEmailBtn"/>
+</form>

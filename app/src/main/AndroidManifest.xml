@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.quickjob">
+
+    <!--   Client ID :      208266787347-427pbfitvkim3qva6meadiijaqqkkq54.apps.googleusercontent.com
+           Client Secret :  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
+    -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.QuickJob"
+        android:usesCleartextTraffic="true">
+        <meta-data android:name="asset_statements" android:resource="@string/asset_statements" />
+        <activity android:name=".activity.ProfileActivity" />
+        <activity android:name=".activity.RegisterActivity" />
+        <activity android:name=".activity.LoginActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <!-- it's recommended that you add autoVerify to each <intent-filter> element for consistency -->
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!-- Make sure you explicitly set android:autoVerify to "true". -->
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <!-- If a user clicks on a shared link that uses the "http" scheme, your
+                     app should be able to delegate that traffic to "https". -->
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+
+                <!-- Include one or more domains that should be verified. -->
+                <data android:host="www.quickjob.be" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

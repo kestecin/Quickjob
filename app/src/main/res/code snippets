@@ -1,0 +1,61 @@
+<?php
+function insert_user() { 
+$user_login = $mysqli->real_escape_string($_POST['user_login']);
+$user_pass = $mysqli->real_escape_string($_POST['user_pass']);
+$user_nicename = $mysqli->real_escape_string($_POST['user_login']);
+$user_email = $mysqli->real_escape_string($_POST['user_email']);
+$user_url = $mysqli-> ' ';
+$user_registered = $mysqli-> date("Y-m-d H:i:s");
+$user_activation_key = $mysqli-> ' ';
+$user_status = $mysqli-> 0;
+$user_display_name = $mysqli->real_escape_string($_POST['user_login']);
+
+$data = array(
+		'user_login' => $user_login,
+		'user_pass' => $user_pass,
+		'user_nicename' => $user_nicename,
+		'user_email' => $user_email,
+		'user_url' => $user_url,
+		'user_registered' => $user_registered,
+		'user_activation_key' => $user_activation_key,
+		'user_status' => $user_status,
+		'display_name' => $user_display_name
+	);
+	$table_name = 'qxl_users';
+	$result = $wpdb -> insert($table_name,$data,$format=null);
+
+	if($result==1) {
+		echo "<script>alert('user saved');</script>";
+	} else {
+		echo "<script>alert('unable to save');</script>";
+
+	}
+}
+// register shortcode
+add_shortcode('insertUser', 'insert_user');
+
+function show_users(){
+global $wpdb;
+$result = $wpdb->get_results( "SELECT user_id, user_login, display_name, user_email FROM qxl_users");
+
+echo "<style>";
+echo "body {font-family: Arial;}";
+
+echo ".table_container { padding: 10px 12px 0px 12px;  border: 1px solid #ccc;  }";
+echo "</style></head>";
+echo "<body>";
+
+echo "<div class=\"table_container\"><table>";
+echo "<tr><th style=\"padding-left:10px;\">Id</th><th>Login</th><th>Naam</th><th>Email</th></tr>";
+foreach ($result as $row) {
+	echo "<tr>
+    <td>" . $row->ID . "</td>
+    <td>" . $row->user_login . "</td><
+    td>" . $row->display_name . "</td>
+    <td>" . $row->user_email . "</tr>";
+}
+echo "</table></div>";
+}
+add_shortcode('showUsers', 'show_users');
+
+?>

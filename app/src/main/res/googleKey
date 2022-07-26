@@ -1,0 +1,21 @@
+//get store key
+
+keytool -list -v -keystore C:\Users\Toothless\.android\debug.keystore -alias androiddebugkey -storepass android -keypass android
+
+
+//facebook key hash
+keytool -exportcert -alias YOUR_RELEASE_KEY_ALIAS -keystore YOUR_RELEASE_KEY_PATH | openssl sha1 -binary | openssl base64
+keytool -exportcert -alias androiddebugkey -keystore C:\Users\Toothless\.android\debug.keystore | openssl sha1 -binary | openssl base64
+Px4/ID8/Dj8/ST9BaHs/P0h1Pz8K
+
+keytool -exportcert -alias androiddebugkey -keystore "C:\Users\USERNAME\.android\debug.keystore" | "PATH_TO_OPENSSL_LIBRARY\bin\openssl" sha1 -binary | "PATH_TO_OPENSSL_LIBRARY\bin\openssl" base64
+keytool -exportcert -alias androiddebugkey -keystore C:\Users\Toothless\.android\debug.keystore | C:\OpenSSL\bin\openssl sha1 -binary | C:\OpenSSL\bin\openssl base64
+Px4/ID8/Dj8/ST9BaHs/P0h1Pz8K
+
+keytool -exportcert -alias androiddebugkey -keystore C:\Users\Toothless\.android\debug.keystore | C:\OpenSSL\bin\openssl sha1 -binary |C:\OpenSSL\bin\openssl base64
+
+keytool -exportcert -alias androiddebugkey -keystore C:\Users\Toothless\.android\debug.keystore | openssl sha1 -binary | openssl base64
+
+keytool -exportcert -alias androiddebugkey -keystore C:\Users\Toothless\.android\debug.keystore | C:\OpenSSL\bin\openssl sha1 -binary | C:\OpenSSL\bin\openssl base64
+Dz8jZj8/WQw/PzQ/DQo/b2VeTz8/DQo=
+

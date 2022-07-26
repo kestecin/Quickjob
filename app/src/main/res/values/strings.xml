@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">QuickJob</string>
+    <string name="register"><u>register</u></string>
+    <string name="login">login</string>
+    <string name="maakjob">maak Job</string>
+    <string name="ziejobs">zie Jobs</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">Welcome !</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">Login failed</string>
+    <string name="helloUser">Hello </string>
+    <string name="name">name</string>
+    <string name="don_t_have_an_account_yet">Don\'t have an account yet?</string>
+    <string name="gsmnummer">Gsmnummer</string>
+    <string name="achternaam">Achternaam</string>
+    <string name="voornaam">Voornaam</string>
+    <string name="email">Email</string>
+    <string name="wachtwoord">wachtwoord</string>
+    <string name="herhaal_wachtwoord">Herhaal wachtwoord</string>
+    <string name="registreer">Registreer</string>
+    <string name="hoofdmenu">Hoofdmenu</string>
+    <string name="image_of_user">Image of user</string>
+    <string name="logout">logout</string>
+    <string name="remember_me">Remember me</string>
+    <string name="your_web_client_id">1055458495629-3o2salb6a9qm8tm0brs1qjpvtq2s0dgr.apps.googleusercontent.com</string>
+    <string name="asset_statements" translatable="false">
+  [{
+    \"include\": \"https://quickjob.be/.well-known/assetlinks.json\"
+  }]
+  </string>
+</resources>

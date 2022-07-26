@@ -1,0 +1,65 @@
+if(isset($_POST['submitbtn'])) {
+	$data = array(
+		'fname' => $_POST['fname'],
+		'lname' => $_POST['lname'],
+		'email' => $_POST['email']
+	);
+	$table_name = 'users';
+	$result = $wpdb -> insert($table_name,$data,$format=null);
+
+	if($result==1) {
+		echo "<script>alert('user saved');</script>";
+	} else {
+		echo "<script>alert('unable to save');</script>";
+
+	}
+}
+if(isset($_POST['deleteByIdBtn'])) {
+	$id = $_POST['id'];
+	$table_name = 'users';
+	$result = $wpdb->delete( $table_name, array( 'id' => $id ) );
+	if($result==1) {
+		echo "<script>alert('user removed');</script>";
+	} else {
+		echo "<script>alert('unable to remove user');</script>";
+	}
+}
+
+if(isset($_POST['deleteByFnameBtn'])) {
+	$fname = $_POST['fname'];
+	$table_name = 'users';
+	$result = $wpdb->delete( $table_name, array( 'fname' => $fname ) );
+	if($result==1) {
+		echo "<script>alert('user removed');</script>";
+	} else {
+		echo "<script>alert('unable to remove user');</script>";
+	}
+}
+if(isset($_POST['deleteByLnameBtn'])) {
+	$lname = $_POST['lname'];
+	$table_name = 'users';
+	$result = $wpdb->delete( $table_name, array( 'lname' => $lname ) );
+	if($result==1) {
+		echo "<script>alert('user removed');</script>";
+	} else {
+		echo "<script>alert('unable to remove user');</script>";
+	}
+}
+if(isset($_POST['deleteByEmailBtn'])) {
+	$email = $_POST['email'];
+	$table_name = 'users';
+	$result = $wpdb->delete( $table_name, array( 'email' => $email ) );
+	if($result==1) {
+		echo "<script>alert('user removed');</script>";
+	} else {
+		echo "<script>alert('unable to remove user');</script>";
+	}
+}
+
+add_action('rest_api_init','getUsers');
+function getUsers(){
+	register_rest_route('getusers','search',array(
+		'methods' => WP_REST_SERVER::READABLE,
+		'callback' => ''
+	))
+}
